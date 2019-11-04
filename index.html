@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- create task modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <form>
+                        <span class="font-weight-bold">Title</span>
+                        <input type="text" class="form-control" placeholder="Enter your todo title" id="toDoEl">
+                        <p class="font-weight-bold">Description</p>
+                        <input type="text" class="form-control" placeholder="Enter description" id="toDoDesciption">
+                    </form>
+                </div>
+                <div class="modal-body">
+                    <span class="font-weight-bold">Priority</span><br>
+                    <select name="" class="browser-default custom-select" id="selectPriority">
+                        <option value="Normal">normal</option>
+                        <option value="High">high</option>
+                        <option value="Low">low</option>
+                    </select>
+
+                </div>
+                <div class="modal-footer"> <button class="addBtn btn btnEdit btn-success" onclick="newElement()"
+                        data-dismiss="modal">Add</button> </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- edit task modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <span class="font-weight-bold">Title</span>
+                <input type="text" class="form-control" aria-label="Default"
+                    aria-describedby="inputGroup-sizing-default" type="text" id="editTitle"><br>
+                <span class="font-weight-bold">Description</span>
+                <input type="text" class="form-control" aria-label="Default"
+                    aria-describedby="inputGroup-sizing-default" type="text" id="editDescription"> <br>
+                <span class="font-weight-bold">Priority</span>
+                <select name="" id="selectPriorityEdit" class="browser-default custom-select">
+                    <option value="Normal">Normal</option>
+                    <option value="High">high</option>
+                    <option value="Low">low</option>
+                </select><br>
+                <span class="font-weight-bold">Status</span>
+                <select name="" class="browser-default custom-select" id="selectStatusEdit">
+                    <option value="Open">open</option>
+                    <option value="Done">done</option>
+                </select><br>
+                <button class="btn btn-seccess" data-dismiss="modal" id="saveChanges">Save changes</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="head">
+        <h3>My todo list</h3>
+    </div>
+
+    <!-- header -->
+    <div class="wrapper">
+        <table>
+            <tr>
+                <td>
+                    <span class="font-weight-bold">Search by title</span>
+                    <input type="text" class="form-control" id="input" onkeyup="myFunction()"
+                        placeholder="Search by title">
+                </td>
+                <td>
+                    <span class="font-weight-bold">Filter by status</span>
+                    <select name="" class="browser-default custom-select" id="selectStatusFilter">
+                        <option value="Open">open</option>
+                        <option value="li">all</option>
+                        <option value="Done">done</option>
+                    </select></td>
+
+                <td>
+                    <span class="font-weight-bold">Filter by priority</span>
+                    <select name="" class="browser-default custom-select" id="selectPriorityFilter">
+                        <option value="li">all</option>
+                        <option value="Normal">normal</option>
+                        <option value="High">high</option>
+                        <option value="Low">low</option>
+                    </select></td>
+                <td>
+                    <button id="addBtn" type="button" class="btn btn-warning" data-toggle="modal"
+                        data-target="#exampleModal">Create</button>
+                </td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Remove</th>
+            </tr>
+        </table>
+        <ul id="list">
+        </ul>
+    </div>
+
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
